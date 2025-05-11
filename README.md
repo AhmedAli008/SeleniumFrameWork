@@ -1,4 +1,4 @@
 # SeleniumFramework
 selenium Framework project using java , maven , Testing and POM
 
-# itis Demo for WES 
+# it is Demo for WES 
