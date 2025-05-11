@@ -1,0 +1,11 @@
+[
+  {
+    "testCaseTitle": "Create User",
+    "fullName": "Test@001",
+    "userName": "Test@001",
+    "email":"Ahmed@001.com",
+    "confirmPassword":"aA@12345678",
+    "password":"aA@12345678"
+
+  }
+]

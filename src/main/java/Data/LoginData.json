@@ -1,0 +1,12 @@
+[
+  {
+    "testCaseTitle": "Amman",
+    "tenantusername":"6251151000003_admin",
+    "tenantpassword":"admin"
+  },
+  {
+    "testCaseTitle": "invalid user name",
+    "tenantusername": "Bebo_007",
+    "tenantpassword": "123"
+  }
+]
