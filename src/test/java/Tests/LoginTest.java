@@ -69,6 +69,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test(dataProvider = "TenantData", priority = 2)
+
     @TestCaseTitle("Amman")
     @Description("Login With Amman Pharmaceutical Industries")
     public void login(String tenantusername, String tenantpassword) throws InterruptedException {

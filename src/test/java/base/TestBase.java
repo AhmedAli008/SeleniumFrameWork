@@ -35,7 +35,7 @@ public class TestBase {
 
     public void login() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.Adminlogin("6251151000003_admin", "admin");
+        loginPage.Adminlogin("6251151000003_admin", "adminP@ssw0rd");
          //Assert.assertEquals(loginPage.getText() ,"Welcom back:" , "Login Succes");
 
     }
