@@ -170,4 +170,11 @@ pipeline {
             echo 'Pipeline is unstable - some tests may have failed'
         }
     }
+    post {
+        always {
+            mail to: 'Ahmed.Ali@originsysglobal.com',
+             subject: "Jenkins Build ${env.JOB_NAME} - ${currentBuild.result}",
+             body: "Build ${env.BUILD_NUMBER} finished with status: ${currentBuild.result}\n\nCheck: ${env.BUILD_URL}"
+    }
+}
 }
