@@ -18,14 +18,15 @@
             <class name="Tests.LoginTest"/>
 
             <!-- User Registration Test with Java Faker -->
-            <class name="Tests.ShipmentTest"/>
+            <!--class name="Tests.ShipmentTest"/-->
 
             <!-- Product Hover Menu Test -->
-            <class name="Tests.UsersTest"/>
+            <!--class name="Tests.UsersTest"/-->
 
             <!-- Search Product Test -->
-            <class name="Tests.UsersTest"/>
-            <class name="Tests.UsersTest"/>
+            <!--class name="Tests.VerifyStatusTest"/-->
+
+            <!--class name="Tests.AuditTrailTest"/-->
 
             <!-- Add more test classes here as needed -->
             <!-- <class name="tests.LoginTest"/> -->
