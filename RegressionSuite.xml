@@ -11,14 +11,27 @@
         <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     </listeners>
 
-    <!-- Run all tests in the tests package -->
-    <test name="AllTests">
-        <packages>
-            <!-- Update this to match your actual package structure -->
-            <package name="WesRegression"/>
-            <!-- Or use wildcards for all subpackages -->
-            <!-- <package name="tests.*"/> -->
-        </packages>
+    <!-- Regression Test Suite -->
+    <test name="Regression Suite" preserve-order="false">
+        <classes>
+            <!-- Contact Us Test -->
+            <class name="Tests.LoginTest"/>
+
+            <!-- User Registration Test with Java Faker -->
+            <class name="Tests.ShipmentTest"/>
+
+            <!-- Product Hover Menu Test -->
+            <class name="Tests.UsersTest"/>
+
+            <!-- Search Product Test -->
+            <class name="Tests.UsersTest"/>
+            <class name="Tests.UsersTest"/>
+
+            <!-- Add more test classes here as needed -->
+            <!-- <class name="tests.LoginTest"/> -->
+            <!-- <class name="tests.CheckoutTest"/> -->
+            <!-- <class name="tests.APITest"/> -->
+        </classes>
     </test>
 
 </suite>
