@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <aspectj.version>1.9.10</aspectj.version>
+        <aspectj.version>1.9.7</aspectj.version>
         <testng.version>7.10.2</testng.version>
         <selenium.version>4.29.0</selenium.version>
         <allure.version>2.29.0</allure.version>
@@ -73,7 +73,7 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.9.7</version>
+            <version>${aspectj.version}</version>
         </dependency>
 
         <!-- REST API Testing -->
@@ -81,7 +81,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.5.1</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Annotations -->
@@ -110,20 +109,26 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.0.0-M5</version>
                 <configuration>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
+                    <!-- Simplified AspectJ agent configuration -->
+                    <argLine>-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar</argLine>
+
                     <suiteXmlFiles>
                         <suiteXmlFile>RegressionSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <!-- Fallback if suite file is missing -->
+
+                    <!-- Fallback test patterns -->
                     <includes>
                         <include>**/*Test.java</include>
                         <include>**/Test*.java</include>
                         <include>**/*Tests.java</include>
                     </includes>
+
+                    <!-- Additional configuration for stability -->
+                    <forkCount>1</forkCount>
+                    <reuseForks>false</reuseForks>
+                    <useSystemClassLoader>false</useSystemClassLoader>
                 </configuration>
             </plugin>
 
