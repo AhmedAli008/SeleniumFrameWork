@@ -83,8 +83,14 @@ pipeline {
                 always {
                     // Archive test results
                     script {
+                        // JUnit/Surefire test results
                         if (fileExists('target/surefire-reports/*.xml')) {
                             junit 'target/surefire-reports/*.xml'
+                        }
+
+                        // TestNG test results
+                        if (fileExists('**/testng-results.xml')) {
+                            publishTestResults testResultsPattern: '**/testng-results.xml'
                         }
 
                         // Archive Allure results if they exist
